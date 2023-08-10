@@ -26,9 +26,7 @@ class HomeScreen extends StatelessWidget {
           }),
         ],
       ),
-      body: Center(
-        child: Text("welcome".tr()),
-      )
+      body: Center(child: Text("welcome".tr()))
     );
   }
 }

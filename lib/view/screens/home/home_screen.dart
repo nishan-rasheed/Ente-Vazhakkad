@@ -1,21 +1,33 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:localization/localization.dart';
 
-import '../../../main.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final locale = Localizations.localeOf(context);
     return Scaffold(
-      floatingActionButton: FloatingActionButton(onPressed: (){
-        final myApp = context.findAncestorStateOfType<MyAppState>()!;
-         myApp.changeLocale(locale == Locale('pt', 'BR') ? Locale('en', 'US') : Locale('pt', 'BR'));
-      }),
+      floatingActionButton: Column(mainAxisAlignment: MainAxisAlignment.end,
+        children: [
+           FloatingActionButton(
+            onPressed: (){
+            context.setLocale(Locale('en', 'US'));
+
+            print(context.locale.toString());
+          },
+          child: Icon(Icons.add),
+          ),
+
+          FloatingActionButton(onPressed: (){
+            context.setLocale(Locale('ml', 'IN'));
+
+            print(context.locale.toString());
+          }),
+        ],
+      ),
       body: Center(
-        child: Text('welcome-text'.i18n()),
+        child: Text("welcome".tr()),
       )
     );
   }

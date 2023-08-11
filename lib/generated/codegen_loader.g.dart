@@ -14,11 +14,16 @@ class CodegenLoader extends AssetLoader{
     return Future.value(mapLocales[locale.toString()]);
   }
 
-  static const Map<String,dynamic> en_US = {
-  "welcome": "This word in english"
+  static const Map<String,dynamic> ar_AE = {
+  "welcome": "مرحبًا"
+};
+static const Map<String,dynamic> en_US = {
+  "welcome": "This word in english",
+  "ente_vazhakkad": "Ente Vazhakkad"
 };
 static const Map<String,dynamic> ml_IN = {
-  "welcome": "ഈ വാചകം ഇംഗ്ലീഷിലാണ്"
+  "welcome": "ഈ വാചകം ഇംഗ്ലീഷിലാണ്",
+  "ente_vazhakkad": "എന്റെ വാഴക്കാട്"
 };
-static const Map<String, Map<String,dynamic>> mapLocales = {"en_US": en_US, "ml_IN": ml_IN};
+static const Map<String, Map<String,dynamic>> mapLocales = {"ar_AE": ar_AE, "en_US": en_US, "ml_IN": ml_IN};
 }

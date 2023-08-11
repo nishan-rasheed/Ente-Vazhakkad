@@ -21,6 +21,8 @@ void main() async{
       child: const MyApp()));
 }
 
+
+
 class MyApp extends StatefulWidget {
   const MyApp({super.key});
 
@@ -32,15 +34,19 @@ class MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-          debugShowCheckedModeBanner: false,
-          localizationsDelegates: context.localizationDelegates,
-          supportedLocales: context.supportedLocales,
-          locale: context.locale,
-          theme: ThemeData(
-            appBarTheme: AppBarTheme(color: Color(0xFF000000)),
-          ),
-          home: HomeScreen(),
-        );
+    return Sizer(
+      builder: (context, orientation, deviceType) {
+        return MaterialApp(
+              debugShowCheckedModeBanner: false,
+              localizationsDelegates: context.localizationDelegates,
+              supportedLocales: context.supportedLocales,
+              locale: context.locale,
+              theme: ThemeData(
+                appBarTheme: AppBarTheme(color: Color(0xFF000000)),
+              ),
+              home: HomeScreen(),
+            );
+      }
+    );
   }
 }

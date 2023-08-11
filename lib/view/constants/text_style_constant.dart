@@ -11,4 +11,18 @@ class StyleConfig {
     );
   }
 
+   static TextStyle titleText() {
+    return TextStyle(
+      fontWeight: FontWeight.w500,
+      fontSize: 18.sp,
+    );
+  }
+
+  static TextStyle subTitleText() {
+    return TextStyle(
+      fontWeight: FontWeight.w500,
+      fontSize: 12.sp,
+    );
+  }
+
 }
